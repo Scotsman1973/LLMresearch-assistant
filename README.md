@@ -1,10 +1,10 @@
-# Autonomous PhD Research Assistant: In the Cloud and Locally
+# Autonomous Research Assistant, Cloud and Laptop Based
 
-![Local and cloud-compute architecture](architecture.png)
+![Local and cloud-compute architecture](./images/architecture.png)
 
 ## Introduction
 
-This package runs a continuous literature-foraging and synthesis pipeline for any research field. Heavy compute runs in Google Colab, while open-web and academic-database searching runs on a local machine with an internet connection. The two never talk to each other directly, rather, a shared Google Drive folder acts as a 'dead-drop' between them.  The LLM model is comparatively small, so documents are broken into chunks before they are summarized.  Rather than breaking into XX-sentances long, they are divided into *semantic chunks*.  In that way, similarity is measured, so a break would occur between the methodology and results sections.
+This is a literature-synthesis and search-query-generation application, for any research field.  Both the cloud local components can be run simultaneously, separately, occasionally or never.  Heavy compute runs in Google Colab, while open-web and academic-database searching runs on a local machine with an internet connection. The two never talk to each other directly, rather, a shared Google Drive folder acts as a 'dead-drop' between them.  The LLM model is comparatively small, so documents are broken into chunks before they are summarized.  The documents are divided into *semantic chunks*,  in that way, similarity is measured, so a break would occur between the methodology and results sections.
 
 **One full cycle looks like this:**
 
@@ -89,7 +89,7 @@ PhD-research-assistant/
 
 &nbsp;&nbsp;&nbsp;&nbsp;└── processed/                       ← papers already chunked (also used for brainstorming)
 
-Both machines also keep temporary local copies. Colab uses `/content/phdresearch-*`, and the forager uses `./phdresearch-*` next to the notebook. The forager deletes its local copy when it finishes.
+Both machines also keep temporary local copies. The forager deletes its local copy when it finishes each run.
 
 ---
 
